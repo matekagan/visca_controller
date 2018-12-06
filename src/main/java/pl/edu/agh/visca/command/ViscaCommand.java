@@ -24,8 +24,6 @@ public abstract class ViscaCommand {
 
     protected byte[] getCommandData(Cmd cmd) {
         byte[] cmdData = cmd.createCommandData();
-        cmdData[3] = 15;
-        cmdData[4] = 1;
         pl.edu.agh.kis.visca.cmd.ViscaCommand vCmd = new pl.edu.agh.kis.visca.cmd.ViscaCommand();
         vCmd.commandData = cmdData;
         vCmd.sourceAdr = resolveSourceAddress();
