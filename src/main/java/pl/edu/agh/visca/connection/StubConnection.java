@@ -7,7 +7,7 @@ public class StubConnection implements ViscaConnection {
 
     @Override
     public ViscaResponse readResponse() {
-        return new ViscaResponse(new byte[] {0, 1, 2, 3, 4, 5, 6});
+        return new ViscaResponse(new byte[] {0x40, 0x45, -1});
     }
 
     @Override

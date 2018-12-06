@@ -22,6 +22,7 @@ public class ViscaResponse {
     }
 
     private String translateResponse(String response) {
+        System.out.println(response);
         for (ResponseMatch responseMatch : ResponseMatch.values()) {
             if (response.matches(responseMatch.getPattern())) {
                 return responseMatch.getMessage();
