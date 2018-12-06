@@ -9,7 +9,7 @@ public class PanTiltUp extends ViscaCommand {
 
     @Override
     public ViscaResponse execute(ViscaConnection viscaConnection) {
-        byte[] commandData = getCommandData(new PanTiltUpCmd());
+        byte[] commandData = getCommandDataWithPanTiltParameters(new PanTiltUpCmd());
         viscaConnection.writeBytes(commandData);
         return viscaConnection.readResponse();
     }
@@ -28,4 +28,5 @@ public class PanTiltUp extends ViscaCommand {
     protected byte getDefaultDestinationAddress() {
         return 1;
     }
+
 }

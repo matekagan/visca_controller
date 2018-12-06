@@ -9,7 +9,7 @@ public class ZoomTele extends ViscaCommand {
 
     @Override
     public ViscaResponse execute(ViscaConnection viscaConnection) {
-        byte[] commandData = getCommandData(new ZoomTeleStdCmd());
+        byte[] commandData = getCommandDataWithZoomParameters(new ZoomTeleStdCmd());
         viscaConnection.writeBytes(commandData);
         return viscaConnection.readResponse();
     }

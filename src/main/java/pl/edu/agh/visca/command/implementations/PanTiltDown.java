@@ -9,7 +9,7 @@ public class PanTiltDown extends ViscaCommand {
 
     @Override
     public ViscaResponse execute(ViscaConnection viscaConnection) {
-        byte[] commandData = getCommandData(new PanTiltDownCmd());
+        byte[] commandData = getCommandDataWithPanTiltParameters(new PanTiltDownCmd());
         viscaConnection.writeBytes(commandData);
         return viscaConnection.readResponse();
     }

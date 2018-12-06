@@ -9,7 +9,7 @@ public class ZoomWide extends ViscaCommand {
 
     @Override
     public ViscaResponse execute(ViscaConnection viscaConnection) {
-        byte[] commandData = getCommandData(new ZoomWideStdCmd());
+        byte[] commandData = getCommandDataWithZoomParameters(new ZoomWideStdCmd());
         viscaConnection.writeBytes(commandData);
         return viscaConnection.readResponse();
     }
