@@ -1,5 +1,5 @@
 function executeCommand(command) {
-    let url = buildUrl(command, {dest: getDestination()});
+    let url = buildUrl(command, {dest: getDestination(), param: getParameter()});
     fetch(url, {method: 'POST'})
         .then(response => response.text())
         .then(response => {
@@ -9,6 +9,10 @@ function executeCommand(command) {
 
 function getDestination() {
     return document.getElementById('destination-input').value;
+}
+
+function getParameter() {
+    return document.getElementById('parameter-input').value;
 }
 
 function buildUrl(command, params) {
